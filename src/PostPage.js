@@ -12,8 +12,17 @@ const PostPage = ({ posts, handleDelete }) => {
                         <p className="postDate">{post.datetime}</p>
                         <p className="postBody">{post.body}</p>
                         <button onClick={() => handleDelete(post.id)}>
-                            Delete Post
+                            Delete
                         </button>
+                       
+                        <Link to={`/post/edit/${post.id}`}>
+                        <button style={{
+                            backgroundColor: "yellow",
+                            color: 'black'
+                        }}>
+                            Edit
+                        </button>
+            </Link>
                     </>
                 }
                 {!post &&

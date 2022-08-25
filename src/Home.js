@@ -4,7 +4,7 @@ const Home = ({ posts, fetchError, isLoading }) => {
     return (
         <main className="Home">
              {isLoading && <p>Loading posts...</p>}
-             {fetchError && <p style={{color: 'red'}}>{fetchError}</p>}
+             {!isLoading && fetchError && <p style={{color: 'red'}}>{fetchError}</p>}
             {!isLoading && !fetchError&& (posts.length ? (
                 <Feed posts={posts} />
             ) : (
